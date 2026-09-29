@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Portfólio de Gustavo Costa — Creative Content Strategist & Producer.">
+<title>Gustavo Costa — Portfólio</title>
+<style>
+/* DIREÇÃO DE ARTE: brutalismo editorial. Edite estas variáveis para personalizar. */
+:root{
+  --bg:#e8e5dc;          /* papel cinza quente */
+  --surface:#f3f0e8;
+  --text:#211d1d;
+  --muted:#625b59;
+  --line:#211d1d;
+  --accent:#741f36;      /* bordô */
+  --accent-2:#727747;    /* verde oliva */
+  --accent-3:#c7c2b8;    /* cinza */
+  --font:Arial,Helvetica,sans-serif;
+  --display:Impact,"Arial Narrow",Arial,sans-serif;
+  --width:1240px;
+  --gutter:clamp(16px,4vw,54px);
+  --border:2px solid var(--line);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.45 var(--font);cursor:crosshair}
+a{color:inherit;text-decoration-thickness:1px;text-underline-offset:4px}
+button{font:inherit}
+::selection{background:var(--accent);color:var(--surface)}
+.shell{width:min(var(--width),calc(100% - 2*var(--gutter)));margin:auto}
+header{position:sticky;top:0;z-index:20;background:var(--bg);border-bottom:var(--border)}
+.topbar{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.wordmark{font-weight:900;letter-spacing:-.07em;text-decoration:none;font-size:1.1rem;text-transform:uppercase}
+.nav{display:flex;flex-wrap:wrap;gap:5px}
+.nav button{background:transparent;border:1.5px solid var(--line);color:var(--text);padding:9px 12px;cursor:pointer;text-transform:uppercase;font-size:.75rem;font-weight:800;transition:background .18s,color .18s,transform .18s}
+.nav button:hover{background:var(--accent-2);color:#fff;transform:translate(-2px,-2px)}
+.nav button[aria-current=page]{background:var(--accent);color:var(--surface);box-shadow:3px 3px 0 var(--line)}
+.page{display:none;padding:clamp(42px,7vw,92px) 0 100px}
+.page.active{display:block;animation:page-in .48s cubic-bezier(.2,.8,.2,1) both}
+@keyframes page-in{from{opacity:0;transform:translateY(18px);clip-path:inset(8% 0 0)}to{opacity:1;transform:none;clip-path:inset(0)}}
+.eyebrow{font-size:.72rem;text-transform:uppercase;letter-spacing:.16em;font-weight:900}
+.kicker{display:flex;align-items:center;gap:12px}.kicker:before{content:"";width:32px;height:9px;background:var(--accent-2);display:inline-block}
+h1,h2,h3,p{margin-top:0}
+h1,h2,.display{font-family:var(--display);font-weight:900;text-transform:uppercase}
+h1{font-size:clamp(4.5rem,15vw,13.5rem);line-height:.76;letter-spacing:-.055em;margin:28px 0 25px}
+h2{font-size:clamp(2.8rem,8vw,7rem);line-height:.84;letter-spacing:-.045em;margin:0}
+h3{font-size:1.15rem;line-height:1.1;text-transform:uppercase;letter-spacing:-.02em}
+.role{font-size:clamp(1rem,2vw,1.35rem);font-weight:800;text-transform:uppercase;max-width:600px}
+.lead{font-size:clamp(1.2rem,2.5vw,1.8rem);line-height:1.2;max-width:760px}
+.intro{display:grid;grid-template-columns:1.3fr .7fr;gap:5vw;align-items:end}
+.hero-tag{display:inline-block;background:var(--accent-2);color:#fff;padding:8px 12px;font-size:.75rem;font-weight:900;text-transform:uppercase;transform:rotate(-2deg)}
+.hero-stamp{border:var(--border);background:var(--accent);color:var(--surface);aspect-ratio:4/5;display:flex;flex-direction:column;justify-content:space-between;padding:18px;box-shadow:8px 8px 0 var(--line);transform:rotate(2deg);transition:transform .35s}
+.hero-stamp:hover{transform:rotate(0) scale(1.02)}
+.stamp-big{font:clamp(3rem,7vw,6rem)/.8 var(--display);text-transform:uppercase;letter-spacing:-.05em}
+.stamp-small{font-size:.7rem;font-weight:900;letter-spacing:.12em;text-transform:uppercase}
+.block{margin-top:clamp(72px,11vw,140px)}
+.heading{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;border-bottom:var(--border);padding-bottom:18px;margin-bottom:28px}
+.heading .index{font-size:.75rem;font-weight:900;background:var(--accent-2);color:white;padding:7px 9px}
+.copy{max-width:780px;font-size:1.05rem}.copy p{margin-bottom:18px}
+.contact{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.contact a,.area,.case,.step{display:block;background:var(--surface);border:var(--border);padding:22px;text-decoration:none;box-shadow:5px 5px 0 var(--line);transition:transform .2s,box-shadow .2s,background .2s}
+.contact a:hover,.area:hover,.case:hover,.step:hover{transform:translate(-3px,-3px);box-shadow:9px 9px 0 var(--line)}
+.contact a:hover{background:#ded9cc}
+.contact span{display:block;color:var(--muted);font-size:.72rem;font-weight:900;text-transform:uppercase;letter-spacing:.12em;margin-bottom:8px}
+.timeline{border-top:var(--border)}
+.item{display:grid;grid-template-columns:minmax(220px,.7fr) 1.3fr;gap:36px;padding:26px 0;border-bottom:var(--border);transition:padding .2s}
+.item:hover{padding-left:12px;background:linear-gradient(90deg,rgba(116,31,54,.08),transparent)}
+.item strong{display:block;text-transform:uppercase;font-size:1.02rem}
+.item p,.area p,.case p,.step p{color:var(--muted);margin:0}
+.areas,.cases{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.area{min-height:220px;position:relative;overflow:hidden}
+.area:after{content:"↗";position:absolute;right:18px;bottom:8px;font-size:3rem;font-weight:900;color:var(--accent);transition:transform .2s}
+.area:hover:after{transform:translate(5px,-5px)}
+.area .num,.case .num{font-weight:900;color:var(--accent);font-size:.78rem;letter-spacing:.12em;margin-bottom:28px}
+.area h3{font-size:clamp(1.3rem,3vw,2rem);max-width:330px}
+.process{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px}
+.step{padding:18px;min-height:220px}
+.step .num{font-weight:900;color:var(--accent);font-size:1.4rem;margin-bottom:26px}
+.step h3{font-size:1rem}
+.case{display:flex;flex-direction:column;padding:0;overflow:hidden}
+.case .case-body{padding:24px;display:flex;flex-direction:column;flex:1}
+.case .placeholder{min-height:200px;background:var(--accent-3);border-bottom:var(--border);display:grid;place-items:center;padding:20px;text-align:center;font-weight:900;text-transform:uppercase;letter-spacing:.08em;transition:background .25s}
+.case:nth-child(2n) .placeholder{background:var(--accent-2);color:#fff}
+.case:nth-child(3n) .placeholder{background:var(--accent);color:#fff}
+.case:hover .placeholder{background:var(--text);color:var(--surface)}
+.case h3{font-size:1.55rem}
+.case dl{margin:16px 0}
+.case dt{font-size:.7rem;font-weight:900;margin-top:16px;text-transform:uppercase;letter-spacing:.12em;color:var(--accent)}
+.case dd{margin:5px 0 0;color:#45403f}
+.case-link{margin-top:auto;padding-top:20px;color:var(--accent);font-weight:900;text-transform:uppercase;font-size:.8rem}
+.closing{font:clamp(2.8rem,8vw,7rem)/.86 var(--display);text-transform:uppercase;letter-spacing:-.05em;max-width:900px}
+.marquee{overflow:hidden;white-space:nowrap;background:var(--accent);color:var(--surface);border-block:var(--border);padding:13px 0;margin-top:80px;font-weight:900;text-transform:uppercase;letter-spacing:.12em}
+.marquee span{display:inline-block;animation:marquee 22s linear infinite}
+@keyframes marquee{to{transform:translateX(-50%)}}
+footer{border-top:var(--border);padding:20px 0;color:var(--muted);font-size:.75rem;font-weight:800;text-transform:uppercase}
+.foot{display:flex;justify-content:space-between;gap:20px}
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .65s ease,transform .65s cubic-bezier(.2,.8,.2,1)}
+.reveal.visible{opacity:1;transform:none}
+@media(max-width:760px){
+ body{cursor:auto}.shell{width:calc(100% - 32px)}.topbar{align-items:flex-start;flex-direction:column;padding:15px 0;gap:12px}.nav{width:100%}.nav button{padding:8px;font-size:.68rem}
+ .intro,.item,.contact,.areas,.cases,.process{grid-template-columns:1fr}.intro{gap:40px}.hero-stamp{aspect-ratio:16/9}.page{padding-top:48px}.heading{align-items:flex-start}.heading h2{max-width:75%}.foot{flex-direction:column}.step{min-height:0}.case .placeholder{min-height:170px}
+}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;scroll-behavior:auto!important;transition:none!important}.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<header><div class="shell topbar"><a class="wordmark" href="#sobre" data-page="sobre">GUSTAVO COSTA®</a><nav class="nav" aria-label="Navegação principal"><button data-page="sobre" aria-current="page">01 Sobre</button><button data-page="trajetoria">02 Trajetória</button><button data-page="atuacao">03 Atuação</button><button data-page="cases">04 Cases</button></nav></div></header>
+<main class="shell">
+<section class="page active" id="sobre">
+ <div class="intro"><div><div class="eyebrow kicker">Portfólio independente · 2026</div><h1>Gustavo<br>Costa<span style="color:var(--accent)">.</span></h1><p class="role">Creative Content Strategist<br>&amp; Producer</p><p class="lead">Estratégia, criatividade e conteúdo conectados à cultura.</p><span class="hero-tag">Ideias em movimento ↘</span></div><div class="hero-stamp"><div class="stamp-small">Estratégia / Criação / Produção</div><div class="stamp-big">GC<br>®</div><div class="stamp-small">Portfólio 2026<br>São Paulo · Brasil</div></div></div>
+ <div class="block reveal"><div class="heading"><h2>Quem<br>sou.</h2><span class="index">01 / Apresentação</span></div><div class="copy"><p>Sou Gustavo Costa, profissional de comunicação e criatividade com uma trajetória construída em diferentes frentes da publicidade. Já estive do lado do atendimento, da influência, da criação e da gestão de redes sociais.</p><p>Essa experiência me permite olhar para o conteúdo de forma ampla: entender o desafio da marca, encontrar o caminho criativo e transformar ideias em entregas que fazem sentido para as pessoas.</p><p>Hoje, atuo conectando estratégia, repertório cultural e produção de conteúdo, transitando entre o planejamento e a execução para transformar conversas, comportamentos e referências em oportunidades para as marcas.</p></div></div>
+ <div class="block reveal"><div class="heading"><h2>O que me<br>move.</h2><span class="index">Manifesto</span></div><div class="copy"><p>Acredito em conteúdos que entendem a conversa antes de tentar fazer parte dela. Me interessa observar como as pessoas se comportam, o que consomem, o que compartilham e quais assuntos movimentam a internet.</p><p>É desse encontro entre cultura, comportamento e objetivos de marca que surgem oportunidades criativas. Gosto de transformar referências em ideias, ideias em conteúdo e conteúdo em conversas reais.</p><p>Porque, para mim, criar não é apenas produzir algo para uma plataforma. É encontrar a maneira certa de fazer uma marca participar da vida das pessoas.</p></div></div>
+ <div class="block reveal" id="contato"><div class="heading"><h2>Fale<br>comigo.</h2><span class="index">Contato</span></div><div class="contact"><a href="mailto:seuemail@exemplo.com"><span>E-mail ↗</span>seuemail@exemplo.com</a><a href="#" target="_blank" rel="noreferrer"><span>LinkedIn ↗</span>Adicionar link</a><a href="#" target="_blank" rel="noreferrer"><span>Instagram ↗</span>Adicionar link</a></div></div>
+</section>
+<section class="page" id="trajetoria"><div class="eyebrow kicker">Capítulo 02</div><div class="block"><h2>Uma coisa<br>levou à outra.</h2><p class="lead">Uma carreira construída entre atendimento, influência, criação, conteúdo e comunidade.</p></div><div class="timeline block">
+<div class="item reveal"><strong>2019–2022<br>Estagiário e Assistente de Atendimento</strong><p>Contas: Olympikus, Nestlé, Coca-Cola e Avon. Aprendizado sobre marcas, clientes, processos e trabalho integrado entre áreas.</p></div>
+<div class="item reveal"><strong>2022<br>Assessor de Influência</strong><p>Conexão entre marcas e criadores, com olhar para conteúdo, talentos e construção de conversas.</p></div>
+<div class="item reveal"><strong>2022–2023<br>Executivo de Contas</strong><p>Gestão de demandas, alinhamentos e entregas, conectando necessidades do cliente às equipes.</p></div>
+<div class="item reveal"><strong>2023–2025<br>Creator e Influenciador</strong><p>Criação de conteúdo na prática, repertório de plataformas e compreensão da relação entre criadores e audiência.</p></div>
+<div class="item reveal"><strong>2025–2026<br>Community Manager</strong><p>Gestão de comunidade, linguagem de marca, conversas em tempo real e identificação de oportunidades culturais.</p></div>
+<div class="item reveal"><strong>2026–atual<br>Creative Content Strategist &amp; Producer</strong><p>Integração entre estratégia, planejamento, criação e produção de conteúdo.</p></div></div></section>
+<section class="page" id="atuacao"><div class="eyebrow kicker">Capítulo 03</div><div class="block"><h2>O que<br>eu faço.</h2><p class="lead">Da leitura do desafio à entrega: diferentes frentes conectadas por uma visão integrada de conteúdo.</p></div><div class="areas block">
+<article class="area reveal"><div class="num">01 / DISCIPLINA</div><h3>Estratégia &amp;<br>Planejamento</h3><p>Transformar objetivos de marca em caminhos de conteúdo, conectando desafios de negócio, comportamento e oportunidades culturais.</p></article>
+<article class="area reveal"><div class="num">02 / DISCIPLINA</div><h3>Criação &amp;<br>Roteiro</h3><p>Desenvolver ideias, narrativas e formatos conectados à linguagem das plataformas e aos interesses das pessoas.</p></article>
+<article class="area reveal"><div class="num">03 / DISCIPLINA</div><h3>Produção de<br>Conteúdo</h3><p>Levar ideias da preparação à execução, conectando roteiro, captação, edição e entrega.</p></article>
+<article class="area reveal"><div class="num">04 / DISCIPLINA</div><h3>Social &amp;<br>Comunidade</h3><p>Acompanhar conversas, identificar oportunidades e aproximar marcas das pessoas por meio de conteúdo e interação.</p></article></div>
+<div class="block"><div class="heading"><h2>Meu processo.</h2><span class="index">05 etapas</span></div><div class="process">
+<article class="step reveal"><div class="num">01</div><h3>Entender</h3><p>Investigar o desafio, os objetivos da marca, o público e o contexto.</p></article><article class="step reveal"><div class="num">02</div><h3>Encontrar</h3><p>Mapear referências, comportamentos e conversas que abrem caminhos criativos.</p></article><article class="step reveal"><div class="num">03</div><h3>Planejar</h3><p>Transformar o direcionamento em estratégia, formatos, prioridades e plano de conteúdo.</p></article><article class="step reveal"><div class="num">04</div><h3>Produzir</h3><p>Levar a ideia à prática, conectando roteiro, captação, edição e publicação.</p></article><article class="step reveal"><div class="num">05</div><h3>Acompanhar</h3><p>Observar a resposta das pessoas, aprender com os sinais e identificar novas oportunidades.</p></article></div></div><div class="block"><p class="closing">Ideias que encontram<br>seu jeito de acontecer.</p></div></section>
+<section class="page" id="cases"><div class="eyebrow kicker">Capítulo 04</div><div class="block"><h2>Trabalho<br>em campo.</h2><p class="lead">Projetos que conectam estratégia, cultura, criação e execução.</p></div><div class="cases block">
+<article class="case reveal"><div class="placeholder">Inserir capa / imagem / vídeo</div><div class="case-body"><div class="num">CASE 01</div><h3>Barba Bielo — Mês da Diversidade</h3><dl><dt>Desafio</dt><dd>Criar uma estratégia de conteúdo para o Mês da Diversidade, conectando a pauta à influenciadora e a uma produção dedicada.</dd><dt>Ideia</dt><dd>Vídeos com conceito, cenários, looks e roteiros pensados para a captação.</dd><dt>Atuação</dt><dd>Planejamento, orçamento e contratação de produtora, cenários, looks, roteiros, apoio nas captações e acompanhamento da edição.</dd><dt>O que demonstra</dt><dd>Planejamento, influência e produção integrados.</dd></dl><a class="case-link" href="https://www.instagram.com/p/Cer4dF3oCi-/" target="_blank" rel="noreferrer">Ver material ↗</a></div></article>
+<article class="case reveal"><div class="placeholder">Inserir capa / imagem / vídeo</div><div class="case-body"><div class="num">CASE 02</div><h3>Google Search</h3><dl><dt>Desafio</dt><dd>Tornar o Google Brasil mais presente nas redes e aproximar a marca da linguagem cotidiana.</dd><dt>Ideia</dt><dd>Uma personalidade social mais humana, com memes e humor conectados à experiência do produto.</dd><dt>Atuação</dt><dd>Estratégia, pacote semanal de memes, captação, edição e análise de conteúdo.</dd><dt>O que demonstra</dt><dd>Social-first, cultura digital e tradução de produto em conteúdo.</dd></dl><a class="case-link" href="https://www.instagram.com/p/C5Z1v32ITB5/" target="_blank" rel="noreferrer">Ver material ↗</a></div></article>
+<article class="case reveal"><div class="placeholder">Inserir capa / imagem / vídeo</div><div class="case-body"><div class="num">CASE 03</div><h3>Pluto TV — CCXP</h3><dl><dt>Desafio</dt><dd>Planejar e executar uma cobertura social conectada ao ritmo e às conversas do evento.</dd><dt>Ideia</dt><dd>Cobertura estratégica e tática, com conteúdos roteirizados e execução ágil.</dd><dt>Atuação</dt><dd>Planejamento, roteiros, captação, edição, publicação e interação com a comunidade.</dd><dt>O que demonstra</dt><dd>Visão ponta a ponta e operação em tempo real.</dd></dl><a class="case-link" href="https://www.instagram.com/p/DR7ad7hAOv7/" target="_blank" rel="noreferrer">Ver material ↗</a></div></article>
+<article class="case reveal"><div class="placeholder">Inserir capa / imagem / vídeo</div><div class="case-body"><div class="num">CASE 04</div><h3>Pluto TV — Persona no X</h3><dl><dt>Desafio</dt><dd>Encontrar uma forma própria de participar de conversas relevantes no X.</dd><dt>Ideia</dt><dd>Uma persona loira e poderosa, presente em assuntos do momento e conversas com outras marcas.</dd><dt>Atuação</dt><dd>Construção da persona, plano tático, criação, redação e monitoramento de redes.</dd><dt>O que demonstra</dt><dd>Voz de marca, timing cultural e conversas orgânicas.</dd></dl><a class="case-link" href="https://x.com/poptime/status/1942638956987965627?s=20" target="_blank" rel="noreferrer">Ver material ↗</a></div></article>
+<article class="case reveal"><div class="placeholder">Inserir capa / imagem / vídeo</div><div class="case-body"><div class="num">CASE 05</div><h3>Paramount+</h3><dl><dt>Desafio</dt><dd>Aproximar filmes e séries da linguagem e dos códigos de humor da internet.</dd><dt>Ideia</dt><dd>Traduzir títulos e universos de entretenimento para uma linguagem mais memética.</dd><dt>Atuação</dt><dd>Desenvolvimento de persona e planejamento tático de conteúdo.</dd><dt>O que demonstra</dt><dd>Repertório de cultura pop e adaptação de entretenimento para formatos sociais.</dd></dl><a class="case-link" href="https://www.instagram.com/p/DbQ_jiMoMfs/" target="_blank" rel="noreferrer">Ver material ↗</a></div></article>
+</div></section>
+</main><div class="marquee" aria-hidden="true"><span>ESTRATÉGIA ✳ CRIAÇÃO ✳ PRODUÇÃO ✳ CULTURA DIGITAL ✳ SOCIAL FIRST ✳ ESTRATÉGIA ✳ CRIAÇÃO ✳ PRODUÇÃO ✳ CULTURA DIGITAL ✳ SOCIAL FIRST ✳ </span></div>
+<footer><div class="shell foot"><span>Gustavo Costa® · Creative Content Strategist &amp; Producer</span><span>Portfólio · 2026</span></div></footer>
+<script>
+const buttons=document.querySelectorAll('[data-page]'),pages=document.querySelectorAll('.page');
+function revealItems(){const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target)}}),{threshold:.12});document.querySelectorAll('.page.active .reveal').forEach(el=>observer.observe(el))}
+function showPage(id){if(!document.getElementById(id)?.classList.contains('page'))return;pages.forEach(p=>p.classList.toggle('active',p.id===id));buttons.forEach(b=>b.dataset.page===id?b.setAttribute('aria-current','page'):b.removeAttribute('aria-current'));history.replaceState(null,'','#'+id);window.scrollTo({top:0,behavior:'smooth'});revealItems()}
+buttons.forEach(b=>b.addEventListener('click',e=>{e.preventDefault();showPage(b.dataset.page)}));const initial=location.hash.slice(1);if(initial)showPage(initial);else revealItems();
+</script>
+</body></html>
